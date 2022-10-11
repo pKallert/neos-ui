@@ -27,7 +27,7 @@
     }
 }
 .dropDown__contents {
-    position: relative;
+    position: absolute;
     min-width: 160px;
     padding: 2px !important;
     margin-top: -2px;
