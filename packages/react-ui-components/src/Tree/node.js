@@ -118,6 +118,7 @@ export class Header extends PureComponent {
         connectDragSource: PropTypes.func.isRequired,
         connectDropTarget: PropTypes.func.isRequired,
         canDrop: PropTypes.bool.isRequired,
+        directLink: PropTypes.string,
         isDragging: PropTypes.bool,
         isOver: PropTypes.bool,
         dragForbidden: PropTypes.bool,
@@ -153,6 +154,10 @@ export class Header extends PureComponent {
         });
     }
 
+    onDirectLinkClick(e) {
+        e.preventDefault();
+    }
+
     render() {
         const {
             id,
@@ -181,6 +186,7 @@ export class Header extends PureComponent {
             isOver,
             isDragging,
             canDrop,
+            directLink,
             ...restProps
         } = this.props;
         const rest = omit(restProps, ['onToggle', 'isCollapsed', 'hasError', 'isDragging', 'dragForbidden', 'connectDragPreview']);
@@ -222,16 +228,18 @@ export class Header extends PureComponent {
                                         <IconComponent icon={icon || 'question'} label={iconLabel} />
                                     }
                                 </div>
-                                <span
+                                <a
                                     {...rest}
                                     id={labelIdentifier}
                                     className={theme.header__label}
-                                    onClick={onLabelClick}
+                                    onClick={directLink ? this.onDirectLinkClick : undefined}
                                     data-neos-integrational-test="tree__item__nodeHeader__itemLabel"
                                     role="treeitem"
+                                    href={directLink ? directLink : undefined}
                                 >
                                     {label}
-                                </span>
+                                </a>
+
                             </div>
                         </div>
                     ))}
