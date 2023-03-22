@@ -299,7 +299,7 @@ export default class Node extends PureComponent {
         // Autocreated or we have nested nodes and the node that we are dragging belongs to the selection
         // For read only workspaces we also forbid drag and drop
         const dragForbidden = isWorkspaceReadOnly || node.isAutoCreated || (hasNestedNodes(focusedNodesContextPaths) && focusedNodesContextPaths.includes(node.contextPath));
-
+        console.log(node);
         return (
             <Tree.Node aria-expanded={this.isCollapsed() ? 'false' : 'true'} aria-labelledby={labelIdentifier}>
                 <span ref={refHandler}/>
@@ -322,6 +322,7 @@ export default class Node extends PureComponent {
                     icon={this.getIcon()}
                     customIconComponent={this.getCustomIconComponent()}
                     iconLabel={this.getNodeTypeLabel()}
+                    directLink={isContentTreeNode ? undefined : $get('backendUri', node)}
                     level={level}
                     onToggle={this.handleNodeToggle}
                     onClick={this.handleNodeClick}
