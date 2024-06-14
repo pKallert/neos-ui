@@ -25,11 +25,11 @@ const VARIANTS_BY_RESOLUTION_STRATEGY = {
         icon: 'puzzle-piece',
         labels: {
             label: {
-                id: 'Neos.Neos.Ui:SyncWorkspaceDialog:resolutionStrategy.selection.option.FORCE.label',
+                id: 'Neos.Neos.Ui:EdgePropertySelector:resolutionStrategy.selection.option.FORCE.label',
                 fallback: () => 'Drop conflicting changes'
             },
             description: {
-                id: 'Neos.Neos.Ui:SyncWorkspaceDialog:resolutionStrategy.selection.option.FORCE.description',
+                id: 'Neos.Neos.Ui:EdgePropertySelector:resolutionStrategy.selection.option.FORCE.description',
                 fallback: 'This will save all non-conflicting changes, while every conflicting change will be lost.'
             }
         }
@@ -38,12 +38,12 @@ const VARIANTS_BY_RESOLUTION_STRATEGY = {
         icon: 'trash',
         labels: {
             label: {
-                id: 'Neos.Neos.Ui:SyncWorkspaceDialog:resolutionStrategy.selection.option.DISCARD_ALL.label',
+                id: 'Neos.Neos.Ui:EdgePropertySelector:resolutionStrategy.selection.option.DISCARD_ALL.label',
                 fallback: (props: {workspaceName: WorkspaceName}) =>
                     `Discard workspace "${props.workspaceName}"`
             },
             description: {
-                id: 'Neos.Neos.Ui:SyncWorkspaceDialog:resolutionStrategy.selection.option.DISCARD_ALL.description',
+                id: 'Neos.Neos.Ui:EdgePropertySelector:resolutionStrategy.selection.option.DISCARD_ALL.description',
                 fallback: 'This will discard all changes in your workspace, including those on other sites.'
             }
         }
@@ -113,7 +113,7 @@ export const ResolutionStrategySelectionDialog: React.FC<{
                     onClick={props.onCancel}
                     >
                     <I18n
-                        id="Neos.Neos.Ui:SyncWorkspaceDialog:resolutionStrategy.selection.cancel"
+                        id="Neos.Neos.Ui:EdgePropertySelector:resolutionStrategy.selection.cancel"
                         fallback="Cancel Synchronization"
                         />
                 </Button>,
@@ -126,7 +126,7 @@ export const ResolutionStrategySelectionDialog: React.FC<{
                     className={style.button}
                     >
                     <I18n
-                        id="Neos.Neos.Ui:SyncWorkspaceDialog:resolutionStrategy.selection.accept"
+                        id="Neos.Neos.Ui:EdgePropertySelector:resolutionStrategy.selection.accept"
                         fallback="Accept choice and continue"
                         />
                     <Icon icon="chevron-right" className={style.icon} />
@@ -136,7 +136,7 @@ export const ResolutionStrategySelectionDialog: React.FC<{
                 <div className={style.modalTitle}>
                     <WorkspaceSyncIcon hasProblem onDarkBackground />
                     <I18n
-                        id="Neos.Neos.Ui:SyncWorkspaceDialog:resolutionStrategy.selection.title"
+                        id="Neos.Neos.Ui:EdgePropertySelector:resolutionStrategy.selection.title"
                         fallback={`Conflicts between workspace "${props.workspaceName}" and "${props.baseWorkspaceName}"`}
                         params={props}
                         />
@@ -156,14 +156,14 @@ export const ResolutionStrategySelectionDialog: React.FC<{
                     phase={SyncingPhase.CONFLICT}
                     />
                 <I18n
-                    id="Neos.Neos.Ui:SyncWorkspaceDialog:resolutionStrategy.selection.message"
+                    id="Neos.Neos.Ui:EdgePropertySelector:resolutionStrategy.selection.message"
                     fallback={`Workspace "${props.baseWorkspaceName}" contains modifications that are in conflict with the changes in workspace "${props.workspaceName}".`}
                     params={props}
                     />
                 <details className={style.details}>
                     <summary className={style.summary}>
                         <I18n
-                            id="Neos.Neos.Ui:SyncWorkspaceDialog:resolutionStrategy.selection.summary"
+                            id="Neos.Neos.Ui:EdgePropertySelector:resolutionStrategy.selection.summary"
                             fallback={`Show information about ${props.conflicts.length} conflict(s)`}
                             params={{numberOfConflicts: props.conflicts.length}}
                             />
@@ -174,7 +174,7 @@ export const ResolutionStrategySelectionDialog: React.FC<{
                         />
                 </details>
                 <I18n
-                    id="Neos.Neos.Ui:SyncWorkspaceDialog:resolutionStrategy.selection.prompt"
+                    id="Neos.Neos.Ui:EdgePropertySelector:resolutionStrategy.selection.prompt"
                     fallback="In order to proceed, you need to decide what to do with the conflicting changes:"
                     />
                 <SelectBox

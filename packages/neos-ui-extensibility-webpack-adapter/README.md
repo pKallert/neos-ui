@@ -52,7 +52,7 @@ You have free choice about the directory structure (except that the `"buildTarge
 		- Private
 			- NeosUserInterface
 				- src
-					- index.js
+					- index.tsx
 					- manifest.js
 				- package.json
 
@@ -75,7 +75,7 @@ We place the plugin in `Resources/Private/NeosUserInterface`:
       "build": "NODE_ENV=production neos-react-scripts build",
       "watch": "neos-react-scripts watch"
   },
-	"main": "./src/index.js",
+	"main": "./src/index.tsx",
   "neos": {
     "buildTargetDirectory": "../../Public/NeosUserInterface"
   },
@@ -108,7 +108,7 @@ Neos:
 
 Now you can get started with your plugin.
 
-By convention your `src/index.js` will import the manifest:
+By convention your `src/index.tsx` will import the manifest:
 ```js
 import './manifest.js'
 ```

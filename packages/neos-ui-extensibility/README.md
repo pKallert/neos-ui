@@ -73,7 +73,7 @@ You have free choice about the directory structure (except that the compiled ass
 		- Private
 			- NeosUserInterface
 				- src
-					- index.js
+					- index.tsx
 					- manifest.js
 				- package.json
 
@@ -116,7 +116,7 @@ const options = {
   logLevel: "info",
   bundle: true,
   target: "es2020",
-  entryPoints: { "Plugin": "src/index.js" },
+  entryPoints: { "Plugin": "src/index.tsx" },
   // add this loader mapping,
   // in case youre "missusing" javascript files as typescript-react files
   // - eg with `@neos` or `@connect` decorators
@@ -161,7 +161,7 @@ Neos:
 
 Now you can get started with your plugin.
 
-By convention your `src/index.js` will import the manifest:
+By convention your `src/index.tsx` will import the manifest:
 ```js
 import './manifest.js'
 ```

@@ -25,12 +25,12 @@ const VARIANTS_BY_SYNCING_PHASE = {
         style: 'success',
         label: {
             title: {
-                id: 'Neos.Neos.Ui:SyncWorkspaceDialog:success.title',
+                id: 'Neos.Neos.Ui:EdgePropertySelector:success.title',
                 fallback: (props: { workspaceName: WorkspaceName; }) =>
                     `Workspace "${props.workspaceName}" is up-to-date`
             },
             message: {
-                id: 'Neos.Neos.Ui:SyncWorkspaceDialog:success.message',
+                id: 'Neos.Neos.Ui:EdgePropertySelector:success.message',
                 fallback: (props: { workspaceName: WorkspaceName; baseWorkspaceName: WorkspaceName; }) =>
                     `Workspace "${props.workspaceName}" has been successfully synchronized with all recent changes in workspace "${props.baseWorkspaceName}".`
             }
@@ -41,12 +41,12 @@ const VARIANTS_BY_SYNCING_PHASE = {
         style: 'error',
         label: {
             title: {
-                id: 'Neos.Neos.Ui:SyncWorkspaceDialog:error.title',
+                id: 'Neos.Neos.Ui:EdgePropertySelector:error.title',
                 fallback: (props: { workspaceName: WorkspaceName; }) =>
                     `Workspace "${props.workspaceName}" could not be synchronized`
             },
             message: {
-                id: 'Neos.Neos.Ui:SyncWorkspaceDialog:error.message',
+                id: 'Neos.Neos.Ui:EdgePropertySelector:error.message',
                 fallback: (props: { workspaceName: WorkspaceName; baseWorkspaceName: WorkspaceName; }) =>
                     `Workspace "${props.workspaceName}" could not be synchronized with the recent changes in workspace "${props.baseWorkspaceName}".`
             }
@@ -82,7 +82,7 @@ export const ResultDialog: React.FC<{
                     className={style.button}
                 >
                     <I18n
-                        id="Neos.Neos.Ui:SyncWorkspaceDialog:error.acknowledge"
+                        id="Neos.Neos.Ui:EdgePropertySelector:error.acknowledge"
                         fallback="Cancel"
                         />
                 </Button>,
@@ -96,7 +96,7 @@ export const ResultDialog: React.FC<{
                 >
                     <Icon icon="refresh" className={style.icon} />
                     <I18n
-                        id="Neos.Neos.Ui:SyncWorkspaceDialog:error.retry"
+                        id="Neos.Neos.Ui:EdgePropertySelector:error.retry"
                         fallback="Try again"
                         />
                 </Button>
@@ -111,7 +111,7 @@ export const ResultDialog: React.FC<{
                 >
                     <Icon icon="check" className={style.icon} />
                     <I18n
-                        id="Neos.Neos.Ui:SyncWorkspaceDialog:success.acknowledge"
+                        id="Neos.Neos.Ui:EdgePropertySelector:success.acknowledge"
                         fallback="OK"
                         />
                 </Button>

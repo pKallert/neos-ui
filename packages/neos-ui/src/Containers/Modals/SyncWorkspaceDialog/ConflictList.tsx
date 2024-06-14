@@ -38,7 +38,7 @@ const VARIANTS_BY_TYPE_OF_CHANGE = {
     [TypeOfChange.NODE_HAS_BEEN_CHANGED]: {
         icon: 'pencil',
         label: {
-            id: 'Neos.Neos.Ui:SyncWorkspaceDialog:conflictList.typeOfChange.NODE_HAS_BEEN_CHANGED.label',
+            id: 'Neos.Neos.Ui:EdgePropertySelector:conflictList.typeOfChange.NODE_HAS_BEEN_CHANGED.label',
             fallback: (props: { label: string }) =>
                 `"${props.label}" has been edited.`
         }
@@ -46,7 +46,7 @@ const VARIANTS_BY_TYPE_OF_CHANGE = {
     [TypeOfChange.NODE_HAS_BEEN_CREATED]: {
         icon: 'plus',
         label: {
-            id: 'Neos.Neos.Ui:SyncWorkspaceDialog:conflictList.typeOfChange.NODE_HAS_BEEN_CREATED.label',
+            id: 'Neos.Neos.Ui:EdgePropertySelector:conflictList.typeOfChange.NODE_HAS_BEEN_CREATED.label',
             fallback: (props: { label: string }) =>
                 `"${props.label}" has been created.`
         }
@@ -54,7 +54,7 @@ const VARIANTS_BY_TYPE_OF_CHANGE = {
     [TypeOfChange.NODE_HAS_BEEN_DELETED]: {
         icon: 'times',
         label: {
-            id: 'Neos.Neos.Ui:SyncWorkspaceDialog:conflictList.typeOfChange.NODE_HAS_BEEN_DELETED.label',
+            id: 'Neos.Neos.Ui:EdgePropertySelector:conflictList.typeOfChange.NODE_HAS_BEEN_DELETED.label',
             fallback: (props: { label: string }) =>
                 `"${props.label}" has been deleted.`
         }
@@ -62,7 +62,7 @@ const VARIANTS_BY_TYPE_OF_CHANGE = {
     [TypeOfChange.NODE_HAS_BEEN_MOVED]: {
         icon: 'long-arrow-right',
         label: {
-            id: 'Neos.Neos.Ui:SyncWorkspaceDialog:conflictList.typeOfChange.NODE_HAS_BEEN_MOVED.label',
+            id: 'Neos.Neos.Ui:EdgePropertySelector:conflictList.typeOfChange.NODE_HAS_BEEN_MOVED.label',
             fallback: (props: { label: string }) =>
                 `"${props.label}" has been moved.`
         }
@@ -73,7 +73,7 @@ const VARIANTS_BY_REASON_FOR_CONFLICT = {
     [ReasonForConflict.NODE_HAS_BEEN_DELETED]: {
         icon: 'times',
         label: {
-            id: 'Neos.Neos.Ui:SyncWorkspaceDialog:conflictList.reasonForConflict.NODE_HAS_BEEN_DELETED.label',
+            id: 'Neos.Neos.Ui:EdgePropertySelector:conflictList.reasonForConflict.NODE_HAS_BEEN_DELETED.label',
             fallback: (props: { label: string }) =>
                 `"${props.label}" or one of its ancestor nodes has been deleted.`
         }
@@ -93,21 +93,21 @@ const ConflictItem: React.FC<{
     const affectedNode = props.conflict.affectedNode ?? {
         icon: 'question',
         label: props.i18n.translate(
-            'Neos.Neos.Ui:SyncWorkspaceDialog:conflictList.unknownNode',
+            'Neos.Neos.Ui:EdgePropertySelector:conflictList.unknownNode',
             'Unknown Node'
         )
     };
     const affectedDocument = props.conflict.affectedDocument ?? {
         icon: 'question',
         label: props.i18n.translate(
-            'Neos.Neos.Ui:SyncWorkspaceDialog:conflictList.unknownDocument',
+            'Neos.Neos.Ui:EdgePropertySelector:conflictList.unknownDocument',
             'Unknown Document'
         )
     };
     const affectedSite = props.conflict.affectedSite ?? {
         icon: 'question',
         label: props.i18n.translate(
-            'Neos.Neos.Ui:SyncWorkspaceDialog:conflictList.unknownSite',
+            'Neos.Neos.Ui:EdgePropertySelector:conflictList.unknownSite',
             'Unknown Site'
         )
     };
@@ -128,7 +128,7 @@ const ConflictItem: React.FC<{
                     <div className={style.conflict__descriptionList__group}>
                         <dt className={style.conflict__descriptionList__title}>
                             <I18n
-                                id="Neos.Neos.Ui:SyncWorkspaceDialog:conflictList.affectedSite.label"
+                                id="Neos.Neos.Ui:EdgePropertySelector:conflictList.affectedSite.label"
                                 fallback="Affected Site"
                                 />
                         </dt>
@@ -139,7 +139,7 @@ const ConflictItem: React.FC<{
                     <div className={style.conflict__descriptionList__group}>
                         <dt className={style.conflict__descriptionList__title}>
                             <I18n
-                                id="Neos.Neos.Ui:SyncWorkspaceDialog:conflictList.affectedDocument.label"
+                                id="Neos.Neos.Ui:EdgePropertySelector:conflictList.affectedDocument.label"
                                 fallback="Affected Document"
                                 />
                         </dt>
@@ -150,7 +150,7 @@ const ConflictItem: React.FC<{
                     <div className={style.conflict__descriptionList__group}>
                         <dt className={style.conflict__descriptionList__title}>
                             <I18n
-                                id="Neos.Neos.Ui:SyncWorkspaceDialog:conflictList.typeOfChange.label"
+                                id="Neos.Neos.Ui:EdgePropertySelector:conflictList.typeOfChange.label"
                                 fallback="What was changed?"
                                 />
                         </dt>
@@ -173,7 +173,7 @@ const ConflictItem: React.FC<{
                         ) : (
                             <dd className={style.conflict__descriptionList__description}>
                                 <I18n
-                                    id="Neos.Neos.Ui:SyncWorkspaceDialog:conflictList.typeOfChange.unknownMessage"
+                                    id="Neos.Neos.Ui:EdgePropertySelector:conflictList.typeOfChange.unknownMessage"
                                     fallback="Sorry, but there is no available information on this change."
                                     />
                             </dd>
@@ -183,7 +183,7 @@ const ConflictItem: React.FC<{
                     <div className={style.conflict__descriptionList__group}>
                         <dt className={style.conflict__descriptionList__title}>
                             <I18n
-                                id="Neos.Neos.Ui:SyncWorkspaceDialog:conflictList.reasonForConflict.label"
+                                id="Neos.Neos.Ui:EdgePropertySelector:conflictList.reasonForConflict.label"
                                 fallback="Why is there a conflict?"
                                 />
                         </dt>
@@ -203,7 +203,7 @@ const ConflictItem: React.FC<{
                         ) : (
                             <dd className={style.conflict__descriptionList__description}>
                                 <I18n
-                                    id="Neos.Neos.Ui:SyncWorkspaceDialog:conflictList.reasonForConflict.unknownMessage"
+                                    id="Neos.Neos.Ui:EdgePropertySelector:conflictList.reasonForConflict.unknownMessage"
                                     fallback="Sorry, but there is no available information on the reason for this conflict."
                                     />
                             </dd>
@@ -233,7 +233,7 @@ const Node: React.FC<{
         ) : null}
         {props.label ?? (
             <I18n
-                id="Neos.Neos.Ui:SyncWorkspaceDialog:conflictList.unknownNode"
+                id="Neos.Neos.Ui:EdgePropertySelector:conflictList.unknownNode"
                 fallback="Unknown Node"
                 />
         )}

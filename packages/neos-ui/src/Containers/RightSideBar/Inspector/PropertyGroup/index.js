@@ -44,6 +44,7 @@ export default class PropertyGroup extends PureComponent {
                 </ToggablePanel.Header>
                 <ToggablePanel.Contents>
                     {items.map(item => {
+                        console.log(item);
                         const itemId = item?.id;
                         const itemType = item?.type;
                         const label = item?.label || '';

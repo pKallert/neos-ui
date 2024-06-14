@@ -27,7 +27,7 @@ export const ProcessIndicator: React.FC<{
                 <div className={style.modalTitle}>
                     <Icon icon="refresh" spin />
                     <I18n
-                        id="Neos.Neos.Ui:SyncWorkspaceDialog:process.title"
+                        id="Neos.Neos.Ui:EdgePropertySelector:process.title"
                         params={props}
                         fallback={`Synchronizing workspace "${props.workspaceName}"...`}
                         />
@@ -47,7 +47,7 @@ export const ProcessIndicator: React.FC<{
                     baseWorkspaceName={props.baseWorkspaceName}
                     />
                 <I18n
-                    id="Neos.Neos.Ui:SyncWorkspaceDialog:process.message"
+                    id="Neos.Neos.Ui:EdgePropertySelector:process.message"
                     params={props}
                     fallback={`Please wait, while workspace "${props.workspaceName}" is being synchronized with recent changes in workspace "${props.baseWorkspaceName}". This may take a while.`}
                     />

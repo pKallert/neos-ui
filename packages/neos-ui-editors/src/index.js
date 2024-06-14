@@ -23,7 +23,8 @@ import {
     CKEditorWrap,
     ImageCropper,
     MediaDetailsScreen,
-    MediaSelectionScreen
+    MediaSelectionScreen,
+    EdgePropertiesSelector
 } from './SecondaryEditors/index';
 
 import AssetUpload from './Library/AssetUpload';
@@ -58,6 +59,7 @@ export {
     ImageCropper,
     MediaDetailsScreen,
     MediaSelectionScreen,
+    EdgePropertiesSelector,
 
     AssetUpload,
     AssetOption,
@@ -90,6 +92,7 @@ export default {
     ImageCropper,
     MediaDetailsScreen,
     MediaSelectionScreen,
+    EdgePropertiesSelector,
 
     AssetUpload,
     AssetOption,

@@ -59,7 +59,7 @@ const ForceConfirmationDialog: React.FC<{
                     onClick={props.onCancelConflictResolution}
                     >
                     <I18n
-                        id="Neos.Neos.Ui:SyncWorkspaceDialog:resolutionStrategy.FORCE.confirmation.cancel"
+                        id="Neos.Neos.Ui:EdgePropertySelector:resolutionStrategy.FORCE.confirmation.cancel"
                         fallback="No, cancel"
                         />
                 </Button>,
@@ -73,7 +73,7 @@ const ForceConfirmationDialog: React.FC<{
                     >
                     <Icon icon="chevron-right" className={style.icon} />
                     <I18n
-                        id="Neos.Neos.Ui:SyncWorkspaceDialog:resolutionStrategy.FORCE.confirmation.confirm"
+                        id="Neos.Neos.Ui:EdgePropertySelector:resolutionStrategy.FORCE.confirmation.confirm"
                         fallback="Yes, drop those changes"
                         />
                 </Button>
@@ -82,7 +82,7 @@ const ForceConfirmationDialog: React.FC<{
                 <div className={style.modalTitle}>
                     <WorkspaceSyncIcon hasProblem onDarkBackground />
                     <I18n
-                        id="Neos.Neos.Ui:SyncWorkspaceDialog:resolutionStrategy.FORCE.confirmation.title"
+                        id="Neos.Neos.Ui:EdgePropertySelector:resolutionStrategy.FORCE.confirmation.title"
                         fallback={`Drop conflicting changes in workspace "${props.workspaceName}"`}
                         params={props}
                         />
@@ -97,7 +97,7 @@ const ForceConfirmationDialog: React.FC<{
         >
             <div className={style.modalContents}>
                 <I18n
-                    id="Neos.Neos.Ui:SyncWorkspaceDialog:resolutionStrategy.FORCE.confirmation.conflicts.label"
+                    id="Neos.Neos.Ui:EdgePropertySelector:resolutionStrategy.FORCE.confirmation.conflicts.label"
                     fallback="You are about to drop the following changes:"
                     />
                 <ConflictList
@@ -105,7 +105,7 @@ const ForceConfirmationDialog: React.FC<{
                     i18n={props.i18n}
                     />
                 <I18n
-                    id="Neos.Neos.Ui:SyncWorkspaceDialog:resolutionStrategy.FORCE.confirmation.message"
+                    id="Neos.Neos.Ui:EdgePropertySelector:resolutionStrategy.FORCE.confirmation.message"
                     fallback="Do you wish to proceed? Be careful: This cannot be undone!"
                     />
             </div>
@@ -130,7 +130,7 @@ const DiscardAllConfirmationDialog: React.FC<{
                     onClick={props.onCancelConflictResolution}
                     >
                     <I18n
-                        id="Neos.Neos.Ui:SyncWorkspaceDialog:resolutionStrategy.DISCARD_ALL.confirmation.cancel"
+                        id="Neos.Neos.Ui:EdgePropertySelector:resolutionStrategy.DISCARD_ALL.confirmation.cancel"
                         fallback="No, cancel"
                         />
                 </Button>,
@@ -144,7 +144,7 @@ const DiscardAllConfirmationDialog: React.FC<{
                     >
                     <Icon icon="trash" className={style.icon} />
                     <I18n
-                        id="Neos.Neos.Ui:SyncWorkspaceDialog:resolutionStrategy.DISCARD_ALL.confirmation.confirm"
+                        id="Neos.Neos.Ui:EdgePropertySelector:resolutionStrategy.DISCARD_ALL.confirmation.confirm"
                         fallback="Yes, discard everything"
                         />
                 </Button>
@@ -153,7 +153,7 @@ const DiscardAllConfirmationDialog: React.FC<{
                 <div className={style.modalTitle}>
                     <WorkspaceSyncIcon hasProblem onDarkBackground />
                     <I18n
-                        id="Neos.Neos.Ui:SyncWorkspaceDialog:resolutionStrategy.DISCARD_ALL.confirmation.title"
+                        id="Neos.Neos.Ui:EdgePropertySelector:resolutionStrategy.DISCARD_ALL.confirmation.title"
                         fallback={`Discard all changes in workspace "${props.workspaceName}"`}
                         params={props}
                         />
@@ -174,7 +174,7 @@ const DiscardAllConfirmationDialog: React.FC<{
                     phase={PublishingPhase.START}
                     />
                 <I18n
-                    id="Neos.Neos.Ui:SyncWorkspaceDialog:resolutionStrategy.DISCARD_ALL.confirmation.message"
+                    id="Neos.Neos.Ui:EdgePropertySelector:resolutionStrategy.DISCARD_ALL.confirmation.message"
                     fallback={`You are about to discard all changes in workspace "${props.workspaceName}". This includes all changes on other sites. Do you wish to proceed? Be careful: This cannot be undone!`}
                     params={props}
                     />

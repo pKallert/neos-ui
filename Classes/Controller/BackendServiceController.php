@@ -832,4 +832,38 @@ class BackendServiceController extends ActionController
             ]);
         }
     }
+    /**
+     * Fetches the
+     * @psalm-param list<string> string $node
+
+    public function getEdgeReferenceDataAction(Node $node): void
+    {
+        $contentRepositoryId = SiteDetectionResult::fromRequest($this->request->getHttpRequest())->contentRepositoryId;
+        $contentRepository = $this->contentRepositoryRegistry->get($contentRepositoryId);
+        $nodeAddressFactory = NodeAddressFactory::create($contentRepository);
+
+        $subgraph = $contentRepository->getContentGraph($nodeAddress->workspaceName)->getSubgraph(
+            $nodeAddress->dimensionSpacePoint,
+            VisibilityConstraints::withoutRestrictions()
+        );
+        $sub
+        $nodeAddress = $nodeAddressFactory->createFromUriString($nodeAddressString);
+        $node = $subgraph->findNodeById($nodeAddress->nodeAggregateId);
+        $subgraph->findReferences(
+            $sourceNodeAggregateId,
+            FindReferencesFilter::create()
+        );
+        $result = [];
+        foreach ($nodes as $nodeAddressString) {
+            $nodeAddress = $nodeAddressFactory->createFromUriString($nodeAddressString);
+            $subgraph = $contentRepository->getContentGraph($nodeAddress->workspaceName)->getSubgraph(
+                $nodeAddress->dimensionSpacePoint,
+                VisibilityConstraints::withoutRestrictions()
+            );
+
+
+        }
+
+        $this->view->assign('value', $result);
+    }*/
 }

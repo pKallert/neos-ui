@@ -16,7 +16,7 @@ export default ({isMulti}) => WrappedComponent => {
 
     class ReferenceDataLoader extends PureComponent {
         static propTypes = {
-            value: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]),
+            value: PropTypes.any,
             options: PropTypes.shape({
                 nodeTypes: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]),
                 placeholder: PropTypes.string,

@@ -105,6 +105,10 @@ manifest('inspectorEditors', {}, globalRegistry => {
         component: Editors.MediaSelectionScreen
     });
 
+    secondaryEditorsRegistry.set('Neos.Neos/Inspector/Secondary/Editors/EdgePropertiesSelector', {
+        component: Editors.EdgePropertiesSelector
+    });
+
     //
     // LinkInput options panel containers.
     // Feel free to add additional custom options here

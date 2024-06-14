@@ -78,6 +78,7 @@ export default class InspectorEditorEnvelope extends PureComponent {
                     options={this.options}
                     highlight={transientValue && transientValue.value !== sourceValue}
                     identifier={id}
+                    node={node}
                     value={transientValue ? transientValue.value : sourceValue}
                     hooks={transientValue ? transientValue.hooks : null}
                     commit={this.commit}

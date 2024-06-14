@@ -36,7 +36,7 @@ export const ConfirmationDialog: React.FC<{
                     onClick={props.onCancel}
                     >
                     <I18n
-                        id="Neos.Neos.Ui:SyncWorkspaceDialog:confirmation.cancel"
+                        id="Neos.Neos.Ui:EdgePropertySelector:confirmation.cancel"
                         fallback="No, cancel"
                         />
                 </Button>,
@@ -50,7 +50,7 @@ export const ConfirmationDialog: React.FC<{
                     >
                     <Icon icon="sync" className={style.icon} />
                     <I18n
-                        id="Neos.Neos.Ui:SyncWorkspaceDialog:confirmation.confirm"
+                        id="Neos.Neos.Ui:EdgePropertySelector:confirmation.confirm"
                         fallback="Yes, synchronize now"
                         />
                 </Button>
@@ -59,7 +59,7 @@ export const ConfirmationDialog: React.FC<{
                 <div className={style.modalTitle}>
                     <WorkspaceSyncIcon onDarkBackground />
                     <I18n
-                        id="Neos.Neos.Ui:SyncWorkspaceDialog:confirmation.title"
+                        id="Neos.Neos.Ui:EdgePropertySelector:confirmation.title"
                         fallback={`Synchronize workspace "${props.workspaceName}" with "${props.baseWorkspaceName}"`}
                         params={props}
                         />
@@ -79,7 +79,7 @@ export const ConfirmationDialog: React.FC<{
                     phase={SyncingPhase.START}
                     />
                 <I18n
-                    id="Neos.Neos.Ui:SyncWorkspaceDialog:confirmation.message"
+                    id="Neos.Neos.Ui:EdgePropertySelector:confirmation.message"
                     fallback={`Workspace "${props.baseWorkspaceName}" has been modified. You need to synchronize your workspace "${props.workspaceName}" with it in order to see those changes and avoid conflicts. Do you wish to proceed?`}
                     params={props}
                     />

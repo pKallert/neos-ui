@@ -10,6 +10,9 @@ import {connect} from 'react-redux';
 import {actions} from '@neos-project/neos-ui-redux-store';
 
 import {sanitizeOptions} from '../../Library';
+import style from "@neos-project/neos-ui/src/Containers/Drawer/style.module.css";
+import {Button, Icon} from "@neos-project/react-ui-components";
+import I18n from "@neos-project/neos-ui-i18n";
 
 @connect((state) => ({
     creationDialogIsOpen: state?.ui?.nodeCreationDialog?.isOpen,
@@ -18,7 +21,8 @@ import {sanitizeOptions} from '../../Library';
     setActiveContentCanvasSrc: actions.UI.ContentCanvas.setSrc
 })
 @neos(globalRegistry => ({
-    i18nRegistry: globalRegistry.get('i18n')
+    i18nRegistry: globalRegistry.get('i18n'),
+    secondaryEditorsRegistry: globalRegistry.get('inspector').get('secondaryEditors')
 }))
 @createNew()
 @dataLoader({isMulti: true})
@@ -34,6 +38,8 @@ export default class ReferencesEditor extends PureComponent {
         onCreateNew: PropTypes.func,
         commit: PropTypes.func.isRequired,
         i18nRegistry: PropTypes.object.isRequired,
+
+        secondaryEditorsRegistry: PropTypes.object.isRequired,
         disabled: PropTypes.bool,
         creationDialogIsOpen: PropTypes.bool,
         changesInInspector: PropTypes.object,
@@ -51,11 +57,22 @@ export default class ReferencesEditor extends PureComponent {
             setActiveContentCanvasSrc(option.uri);
         }
     }
+    handleOpenEdgePropertiesSelector = () => {
+        const {secondaryEditorsRegistry, options} = this.props;
+        const {component: EdgePropertiesSelector} = secondaryEditorsRegistry.get('Neos.Neos/Inspector/Secondary/Editors/EdgePropertiesSelector');
+            console.log(options[0]);
+        this.props.renderSecondaryInspector('EDGE_PROPERTY_EDITOR', () =>
+            <EdgePropertiesSelector items={options[0]} handleApply={this.handleEdgePropertiesSelected} />
+        );
+    }
+    handleEdgePropertiesSelected = newEdgeProperties => {
+        this.handleValueChange(newEdgeProperties);
+    }
 
     render() {
         const {className, i18nRegistry, threshold, placeholder, options, value, displayLoadingIndicator, searchOptions, onSearchTermChange, onCreateNew, disabled} = this.props;
 
-        return (<MultiSelectBox
+        return (<div><MultiSelectBox
             className={className}
             dndType={dndTypes.MULTISELECT}
             optionValueField="identifier"
@@ -78,6 +95,16 @@ export default class ReferencesEditor extends PureComponent {
             onSearchTermChange={onSearchTermChange}
             onCreateNew={onCreateNew}
             disabled={disabled}
-        />);
+        />
+                <Button
+                    className={style.drawer__menuItemBtn}
+                    onClick={this.handleOpenEdgePropertiesSelector}
+                    style="transparent"
+                    hoverStyle="clean"
+                >
+                   Open Edge Properties
+                </Button></div>
+    )
+        ;
     }
 }
