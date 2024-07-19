@@ -64,9 +64,10 @@ export default class ReferenceEditor extends PureComponent {
     handleOpenEdgePropertiesSelector = () => {
         const {secondaryEditorsRegistry, options, value, node, nodeTypesRegistry} = this.props;
         const {component: EdgePropertiesSelector} = secondaryEditorsRegistry.get('Neos.Neos/Inspector/Secondary/Editors/EdgePropertiesSelector');
-
+        console.log('handle');
+        console.log('dinge');
         const propertyElements = nodeTypesRegistry.getEdgeReferenceConfigurationForProperty(node?.nodeType, this.props.identifier);
-
+        console.log(propertyElements);
         this.props.renderSecondaryInspector('EDGE_PROPERTY_EDITOR', () =>
             <EdgePropertiesSelector node={options[0]} items={propertyElements} handleApply={this.handleEdgePropertiesSelected} />
         );

@@ -266,7 +266,9 @@ export default class NodeTypesRegistry extends SynchronousRegistry<NodeType> {
 
         const _references = Object.values(withId(nodeType.references?.[propertyName]?.properties || {}));
         const references = positionalArraySorter(_references, 'position', 'id');
-
+        console.log('referencesConfig');
+        console.log(references);
+        console.log(nodeType);
         return references;
     }
 

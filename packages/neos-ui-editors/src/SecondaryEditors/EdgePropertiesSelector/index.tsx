@@ -9,9 +9,7 @@
  */
 import React from 'react';
 // @ts-ignore
-import {connect} from 'react-redux';
 
-import {neos} from '@neos-project/neos-ui-decorators';
 import {I18nRegistry, NodeTypesRegistry} from '@neos-project/neos-ts-interfaces';
 
 import style from './style.module.css';
@@ -31,10 +29,6 @@ type EdgePropertiesPropsFromNeosGlobals = {
     i18nRegistry: I18nRegistry;
     nodeTypesRegistry: null | NodeTypesRegistry
 }
-
-const withNeosGlobals = neos((globalRegistry): EdgePropertiesPropsFromNeosGlobals => ({
-    i18nRegistry: globalRegistry.get('i18n')
-}));
 
 type WorkspaceSyncProps =
 & EdgePropertiesPropsFromNeosGlobals
@@ -101,4 +95,4 @@ const EdgePropertiesSelector: React.FC<WorkspaceSyncProps> = (props) => {
     );
 };
 
-export default withNeosGlobals(EdgePropertiesSelector as any);
+export default EdgePropertiesSelector as any;

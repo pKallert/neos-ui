@@ -239,11 +239,7 @@ export interface NodeType {
         [propName: string]: PropertyConfiguration | undefined;
     };
     references?: {
-<<<<<<< HEAD
-        [propName: string]: ReferencesConfiguration | undefined;
-=======
         [referenceName: string]: ReferencesConfiguration | undefined;
->>>>>>> 9.0
     };
 }
 

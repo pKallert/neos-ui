@@ -22,7 +22,8 @@ import I18n from "@neos-project/neos-ui-i18n";
 })
 @neos(globalRegistry => ({
     i18nRegistry: globalRegistry.get('i18n'),
-    secondaryEditorsRegistry: globalRegistry.get('inspector').get('secondaryEditors')
+    secondaryEditorsRegistry: globalRegistry.get('inspector').get('secondaryEditors'),
+    nodeTypesRegistry: globalRegistry.get('@neos-project/neos-ui-contentrepository')
 }))
 @createNew()
 @dataLoader({isMulti: true})
@@ -38,12 +39,14 @@ export default class ReferencesEditor extends PureComponent {
         onCreateNew: PropTypes.func,
         commit: PropTypes.func.isRequired,
         i18nRegistry: PropTypes.object.isRequired,
+        nodeTypesRegistry: PropTypes.object.isRequired,
 
         secondaryEditorsRegistry: PropTypes.object.isRequired,
         disabled: PropTypes.bool,
         creationDialogIsOpen: PropTypes.bool,
         changesInInspector: PropTypes.object,
-        setActiveContentCanvasSrc: PropTypes.func.isRequired
+        setActiveContentCanvasSrc: PropTypes.func.isRequired,
+        node: PropTypes.object
     };
 
     handleValueChange = value => {
@@ -58,11 +61,13 @@ export default class ReferencesEditor extends PureComponent {
         }
     }
     handleOpenEdgePropertiesSelector = () => {
-        const {secondaryEditorsRegistry, options} = this.props;
+        const {secondaryEditorsRegistry, options, node, nodeTypesRegistry} = this.props;
         const {component: EdgePropertiesSelector} = secondaryEditorsRegistry.get('Neos.Neos/Inspector/Secondary/Editors/EdgePropertiesSelector');
             console.log(options[0]);
+        const propertyElements = nodeTypesRegistry.getEdgeReferenceConfigurationForProperty(node?.nodeType, this.props.identifier);
+        console.log(propertyElements);
         this.props.renderSecondaryInspector('EDGE_PROPERTY_EDITOR', () =>
-            <EdgePropertiesSelector items={options[0]} handleApply={this.handleEdgePropertiesSelected} />
+            <EdgePropertiesSelector node={options[0]} items={propertyElements} handleApply={this.handleEdgePropertiesSelected} />
         );
     }
     handleEdgePropertiesSelected = newEdgeProperties => {
