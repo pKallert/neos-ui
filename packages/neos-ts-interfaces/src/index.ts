@@ -142,22 +142,13 @@ export interface PropertyConfiguration {
         [propName: string]: ValidatorConfiguration | undefined;
     };
 }
-
 export interface ReferencesConfiguration {
     type?: string;
     ui?: {
         label?: string;
         reloadIfChanged?: boolean;
-        inline?: {
-            editor?: string;
-            editorOptions?: {
-                [propName: string]: any;
-            };
-        }
-        inlineEditable?: boolean;
         inspector?: {
             hidden?: boolean;
-            defaultValue?: string;
             editor?: string;
             editorOptions?: {
                 [propName: string]: any;
@@ -170,14 +161,11 @@ export interface ReferencesConfiguration {
             thumbnail?: string;
         };
     };
-    validation?: {
-        [propName: string]: ValidatorConfiguration | undefined;
-    };
     properties?: {
         [propName: string]: PropertyConfiguration | undefined;
     };
-}
 
+}
 export interface NodeType {
     name?: string;
     superTypes: {
@@ -251,7 +239,11 @@ export interface NodeType {
         [propName: string]: PropertyConfiguration | undefined;
     };
     references?: {
+<<<<<<< HEAD
         [propName: string]: ReferencesConfiguration | undefined;
+=======
+        [referenceName: string]: ReferencesConfiguration | undefined;
+>>>>>>> 9.0
     };
 }
 
